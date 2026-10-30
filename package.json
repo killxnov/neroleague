@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "start": "electron .",
     "dist": "npm run build && electron-builder",
     "make-setup": "electron-builder --windows nsis"
