@@ -1,0 +1,4 @@
+node_modules/
+nero-app/node_modules/
+nero-app/release/
+dist/

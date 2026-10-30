@@ -1,0 +1,56 @@
+{
+  "name": "nero",
+  "version": "1.0.0",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "start": "tsc && electron .",
+    "build:exe": "tsc && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.killxnov.nero",
+    "productName": "Nero",
+    "directories": {
+      "output": "release"
+    },
+    "icon": "src/renderer/sentinel.ico",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/renderer/sentinel.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "src/renderer/sentinel.ico",
+      "uninstallerIcon": "src/renderer/sentinel.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "extraResources": [
+      {
+        "from": "../nero-web/dist",
+        "to": "mobile-dist",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.18.1",
+    "electron": "^29.0.0",
+    "electron-builder": "^26.15.3",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.19.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3",
+    "ws": "^8.21.3"
+  }
+}
